@@ -1,0 +1,30 @@
+version: '3'
+
+services:
+
+  nginx-proxy:
+    image: jwilder/nginx-proxy
+    container_name: nginx-proxy
+    ports:
+      - "80:80"
+    volumes:
+      - /var/run/docker.sock:/tmp/docker.sock:ro
+
+  japronto:
+    container_name: japronto-test
+    build: .
+    restart: "always"
+    environment:
+      - VIRTUAL_HOST=munisisaz.me
+      - VIRTUAL_PORT=8050
+      - TIMEOUT=300
+      - HTTP_PORT=8050
+    volumes:
+      - .:/code
+    ports:
+      - "8050:8050"
+
+networks:
+  default:
+    external:
+      name: nginx-proxy

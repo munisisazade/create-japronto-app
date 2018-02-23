@@ -1,0 +1,5 @@
+japronto==0.1.1
+Jinja2==2.9.6
+MarkupSafe==1.0
+#pkg-resources==0.0.0
+uvloop==0.8.0
