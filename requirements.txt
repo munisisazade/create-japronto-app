@@ -19,7 +19,7 @@ Jinja2==2.9.6
 MarkupSafe==1.0
 #pkg-resources==0.0.0
 ply==3.8
-protobuf==3.5.1
+protobuf==3.18.3
 pyasn1==0.4.2
 pyasn1-modules==0.2.1
 pytz==2018.3
